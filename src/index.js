@@ -24,14 +24,13 @@ const init = () => {
     //challenge #2
     const breedUrl = 'https://dog.ceo/api/breeds/list/all' 
 
+    const list = document.getElementById('dog-breeds');
+
     fetch(breedUrl)
     .then(response => response.json())
     .then(json => {
         //adds the breeds to the page in the <ul> provided in index.html
         // console.log(json.message);
-
-        const list = document.getElementById('dog-breeds');
-
         const breeds = json.message;
         
         //create li for each object key
@@ -45,7 +44,7 @@ const init = () => {
                 const subList = document.createElement('ul');
 
                 breeds[key].forEach(element => {
-                    console.log(element);
+                    //console.log(element);
                     const subListItem = document.createElement('li');
                     subListItem.innerText = `${element} ${key}`;
 
@@ -63,6 +62,14 @@ const init = () => {
 
 
     //challenge #3
+    //Once all of the breeds are rendered in the <ul>, add JavaScript so that, when the user clicks on any one of the <li>s, the font color of that <li> changes. This can be a color of your choosing.
+    list.addEventListener('click', (e) => {
+        console.log(e.target);
+
+        e.target.style.color = "green";
+    })
+
+
 
 
 
