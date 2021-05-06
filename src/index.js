@@ -3,22 +3,22 @@ console.log('%c HI', 'color: firebrick');
 
 const init = () => {
     //challenge #1
-    // const imgUrl = "https://dog.ceo/api/breeds/image/random/4" 
+    const imgUrl = "https://dog.ceo/api/breeds/image/random/4" 
 
-    // fetch(imgUrl)
-    // .then(response => response.json())
-    // .then(json => {
+    fetch(imgUrl)
+    .then(response => response.json())
+    .then(json => {
 
-    //     //adds image elements to the DOM for each image in the array
-    //     const imgContainer = document.getElementById('dog-image-container');
+        //adds image elements to the DOM for each image in the array
+        const imgContainer = document.getElementById('dog-image-container');
 
-    //     // console.log(json);
-    //     json.message.forEach(element => {
-    //         const imgTag = document.createElement('img');
-    //         imgTag.src = element; 
-    //         imgContainer.appendChild(imgTag);
-    //     });
-    // }); //challenge #1
+        // console.log(json);
+        json.message.forEach(element => {
+            const imgTag = document.createElement('img');
+            imgTag.src = element; 
+            imgContainer.appendChild(imgTag);
+        });
+    }); //challenge #1
 
 
     //challenge #2
